@@ -54,12 +54,12 @@ After finishing the above image filtering function, what we do next is to produc
 	 end
 	```
 	Finally, we have to truncate the result to give out the filtered result with the same resolution as the source image. We throw out some pixels around the result image.  
-	<img src=https://github.com/steven14ggyy/DSP_Lab_HW1/blob/master/results/truncation_explanation.jpg width="40%"/>
+	<P Align=center><img src=https://github.com/steven14ggyy/DSP_Lab_HW1/blob/master/results/truncation_explanation.jpg width="40%"/>
 	```Matlab
-	 %truncation to get same resolution as input
-	 delete_x = floor(filter_w/2);
-	 delete_y = floor(filter_h/2);
-	 
+	%truncation to get same resolution as input
+	delete_x = floor(filter_w/2);
+	delete_y = floor(filter_h/2);
+
 	output = zeros(height:width:3);
 	output(:,:,1) = R_filter_result(delete_y+1:delete_y+height,delete_x+1:delete_x+width);
 	output(:,:,2) = G_filter_result(delete_y+1:delete_y+height,delete_x+1:delete_x+width);
@@ -73,7 +73,7 @@ After finishing the above image filtering function, what we do next is to produc
 	|---------------|---------------|---------------|---------------|---------------|---------------|
 	|<img src=https://github.com/steven14ggyy/DSP_Lab_HW1/blob/master/code/Part1%20result/identity_image.jpg />|<img src=https://github.com/steven14ggyy/DSP_Lab_HW1/blob/master/code/Part1%20result/blur_image.jpg />|<img src=https://github.com/steven14ggyy/DSP_Lab_HW1/blob/master/code/Part1%20result/large_blur_image.jpg />|<img src=https://github.com/steven14ggyy/DSP_Lab_HW1/blob/master/code/Part1%20result/sobel_image.jpg/>|<img src=https://github.com/steven14ggyy/DSP_Lab_HW1/blob/master/code/Part1%20result/laplacian_image.jpg />|<img src=https://github.com/steven14ggyy/DSP_Lab_HW1/blob/master/code/Part1%20result/high_pass_image.jpg />|
 	
-2. Hybrid images: 
+2. Hybrid images (proj1.m):  
 	To produce Hybrid images, we need a low-pass filter and a high-pass filter. Here we choose Gausian filter as a LPF. Using identity filter minus Gausian filter, we get a HPF. To show a high-pass filtered image with right data range, __we have to add 0.5 to the result so the image is visualized.__ Finally, we sum both results up and show the hybrid image on the screen. To see the changes apparently, we size the hybrid image by downsampling and putting the original hybrid image and its copies with smaller sizes together to compare their differences.
 	```Matlab
 	%Create LPF
@@ -134,5 +134,5 @@ After finishing the above image filtering function, what we do next is to produc
 	|--------------|--------------|-------------|--------------|--------------|
 	|<img src=https://github.com/steven14ggyy/DSP_Lab_HW1/blob/master/data/%E5%9C%8B%E5%8B%952.jpg />|<img src=https://github.com/steven14ggyy/DSP_Lab_HW1/blob/master/data/%E7%B5%B1%E7%A5%9E2.jpg />|<img src=https://github.com/steven14ggyy/DSP_Lab_HW1/blob/master/data/%E7%B5%B1%E7%A5%9E%2B%E5%9C%8B%E5%8B%95(5)/low_frequencies.jpg />|<img src=https://github.com/steven14ggyy/DSP_Lab_HW1/blob/master/data/%E7%B5%B1%E7%A5%9E%2B%E5%9C%8B%E5%8B%95(5)/high_frequencies.jpg />|<img src=https://github.com/steven14ggyy/DSP_Lab_HW1/blob/master/data/%E7%B5%B1%E7%A5%9E%2B%E5%9C%8B%E5%8B%95(5)/hybrid_image_scales.jpg />|
 	
-	It is very hard to produce good hybrid images. Both source images must have simliar contours, so that when we blender them, the contours of both can be aligned.  It will look better if we use such similar images to produce hybrid images.
+	It is very hard to produce good hybrid images. Both source images must have simliar contours, so that when we blend them, the contours of both can be aligned.  It will look better if we use such similar images to produce hybrid images.
 
