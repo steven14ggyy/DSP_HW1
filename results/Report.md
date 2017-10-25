@@ -104,7 +104,16 @@ After finishing the above image filtering function, what we do next is to produc
 	
 	|Bicycle (LPF)|Motorcycle (HPF)|Hybrid image|
 	|--------------|--------------|-------------|
-	|<img src=https://github.com/steven14ggyy/DSP_Lab_HW1/blob/master/data/bicycle%2Bmotorcycle(10)/low_frequencies.jpg  width="70%"/>|<img src=https://github.com/steven14ggyy/DSP_Lab_HW1/blob/master/data/bicycle%2Bmotorcycle(10)/high_frequencies.jpg  width="70%"/>|<img src=https://github.com/steven14ggyy/DSP_Lab_HW1/blob/master/data/bicycle%2Bmotorcycle(10)/hybrid_image_scales.jpg width="70%"/>|
+	|<img src=https://github.com/steven14ggyy/DSP_Lab_HW1/blob/master/data/bicycle%2Bmotorcycle(10)/low_frequencies.jpg  />|<img src=https://github.com/steven14ggyy/DSP_Lab_HW1/blob/master/data/bicycle%2Bmotorcycle(10)/high_frequencies.jpg  />|<img src=https://github.com/steven14ggyy/DSP_Lab_HW1/blob/master/data/bicycle%2Bmotorcycle(10)/hybrid_image_scales.jpg />|  
+	|Bird (LPF)|Plane (HPF)|Hybrid image|
+	|--------------|--------------|-------------|
+	|<img src=https://github.com/steven14ggyy/DSP_Lab_HW1/blob/master/data/bird%2Bplane(4)/low_frequencies.jpg />|<img src=https://github.com/steven14ggyy/DSP_Lab_HW1/blob/master/data/bird%2Bplane(4)/high_frequencies.jpg />|<img src=https://github.com/steven14ggyy/DSP_Lab_HW1/blob/master/data/bird%2Bplane(4)/hybrid_image_scales.jpg/>|
+	|Dog (LPF)|Cat (HPF)|Hybrid image|
+	|--------------|--------------|-------------|
+	|<img src=https://github.com/steven14ggyy/DSP_Lab_HW1/blob/master/data/cat%2Bdog(7)/low_frequencies.jpg />|<img src=https://github.com/steven14ggyy/DSP_Lab_HW1/blob/master/data/cat%2Bdog(7)/high_frequencies.jpg />|<img src=https://github.com/steven14ggyy/DSP_Lab_HW1/blob/master/data/cat%2Bdog(7)/hybrid_image_scales.jpg />|
+	|Fish (LPF)|Submarine (HPF)|Hybrid image|
+	|--------------|--------------|-------------|
+	|<img src=https://github.com/steven14ggyy/DSP_Lab_HW1/tree/master/data/fish%low_frequencies(12) />|<img src=https://github.com/steven14ggyy/DSP_Lab_HW1/tree/master/data/fish%high_frequencies(12) />|<img src=https://github.com/steven14ggyy/DSP_Lab_HW1/tree/master/data/fish%hybrid_image_scales(12) />|
 ## Installation
 * Other required packages.
 * How to compile from source?
