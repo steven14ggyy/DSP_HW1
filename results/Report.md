@@ -74,7 +74,7 @@ After finishing the above image filtering function, what we do next is to produc
 	|<img src=https://github.com/steven14ggyy/DSP_Lab_HW1/blob/master/code/Part1%20result/identity_image.jpg />|<img src=https://github.com/steven14ggyy/DSP_Lab_HW1/blob/master/code/Part1%20result/blur_image.jpg />|<img src=https://github.com/steven14ggyy/DSP_Lab_HW1/blob/master/code/Part1%20result/large_blur_image.jpg />|<img src=https://github.com/steven14ggyy/DSP_Lab_HW1/blob/master/code/Part1%20result/sobel_image.jpg/>|<img src=https://github.com/steven14ggyy/DSP_Lab_HW1/blob/master/code/Part1%20result/laplacian_image.jpg />|<img src=https://github.com/steven14ggyy/DSP_Lab_HW1/blob/master/code/Part1%20result/high_pass_image.jpg />|
 	
 2. Hybrid images: 
-	To produce Hybrid images, we need a low-pass filter and a high-pass filter. Here we choose Gausian filter as a LPF. Using identity filter minus Gausian filter, we get a HPF. To show a high-pass filtered image with right data range, we have to add 0.5 to the result so the image is visualized. Finally, we sum both results up and show the hybrid image on the screen. To see the changes apparently, we size the hybrid image by downsampling and put the original hybrid image and its copies with smaller sizes together to compare their differences.
+	To produce Hybrid images, we need a low-pass filter and a high-pass filter. Here we choose Gausian filter as a LPF. Using identity filter minus Gausian filter, we get a HPF. To show a high-pass filtered image with right data range, __we have to add 0.5 to the result so the image is visualized.__ Finally, we sum both results up and show the hybrid image on the screen. To see the changes apparently, we size the hybrid image by downsampling and putting the original hybrid image and its copies with smaller sizes together to compare their differences.
 	```Matlab
 	%Create LPF
 	cutoff_frequency = 5; 
@@ -116,38 +116,21 @@ After finishing the above image filtering function, what we do next is to produc
 	
 	|Fish (LPF)|Submarine (HPF)|Hybrid image|
 	|--------------|--------------|-------------|
-	|<img src=https://github.com/steven14ggyy/DSP_Lab_HW1/tree/master/data/fish%low_frequencies(12) />|<img src=https://github.com/steven14ggyy/DSP_Lab_HW1/tree/master/data/fish%high_frequencies(12) />|<img src=https://github.com/steven14ggyy/DSP_Lab_HW1/tree/master/data/fish%hybrid_image_scales(12) />|
+	|<img src=https://github.com/steven14ggyy/DSP_Lab_HW1/blob/master/data/fish%2Bsubmarine(12)/low_frequencies.jpg />|<img src=https://github.com/steven14ggyy/DSP_Lab_HW1/blob/master/data/fish%2Bsubmarine(12)/high_frequencies.jpg />|<img src=https://github.com/steven14ggyy/DSP_Lab_HW1/blob/master/data/fish%2Bsubmarine(12)/hybrid_image_scales.jpg />|
 	
 	|Einstein (LPF)|Marilyn (HPF)|Hybrid image|
 	|--------------|--------------|-------------|
 	|<img src=https://github.com/steven14ggyy/DSP_Lab_HW1/blob/master/data/einstein%2Bmarilyn(6)/low_frequencies.jpg />|<img src=https://github.com/steven14ggyy/DSP_Lab_HW1/blob/master/data/einstein%2Bmarilyn(6)/high_frequencies.jpg />|<img src=https://github.com/steven14ggyy/DSP_Lab_HW1/blob/master/data/einstein%2Bmarilyn(6)/hybrid_image_scales.jpg />|
 	
+	LOL英雄聯盟角色疊合：
+	
 	|Darius|Garen|Darius (LPF)|Garen (HPF)|Hybrid image|
 	|--------------|--------------|-------------|--------------|--------------|
 	|<img src=https://github.com/steven14ggyy/DSP_Lab_HW1/blob/master/data/Darius.png />|<img src=https://github.com/steven14ggyy/DSP_Lab_HW1/blob/master/data/Garen.png />|<img src=https://github.com/steven14ggyy/DSP_Lab_HW1/blob/master/data/Garen%2BDarius(6.5)/low_frequencies.jpg />|<img src=https://github.com/steven14ggyy/DSP_Lab_HW1/blob/master/data/Garen%2BDarius(6.5)/high_frequencies.jpg />|<img src=https://github.com/steven14ggyy/DSP_Lab_HW1/blob/master/data/Garen%2BDarius(6.5)/hybrid_image_scales.jpg />|
-## Installation
-* Other required packages.
-* How to compile from source?
+	
+	知名實況主的相片疊合：
+	
+	|國動|統神|國動 (LPF)|統神 (HPF)|Hybrid image|
+	|--------------|--------------|-------------|--------------|--------------|
+	|<img src=https://github.com/steven14ggyy/DSP_Lab_HW1/blob/master/data/%E7%B5%B1%E7%A5%9E2.jpg />|<img src=https://github.com/steven14ggyy/DSP_Lab_HW1/blob/master/data/%E7%B5%B1%E7%A5%9E2.jpg />|<img src=https://github.com/steven14ggyy/DSP_Lab_HW1/blob/master/data/%E7%B5%B1%E7%A5%9E%2B%E5%9C%8B%E5%8B%95(5)/low_frequencies.jpg />|<img src=https://github.com/steven14ggyy/DSP_Lab_HW1/blob/master/data/%E7%B5%B1%E7%A5%9E%2B%E5%9C%8B%E5%8B%95(5)/high_frequencies.jpg />|<img src=https://github.com/steven14ggyy/DSP_Lab_HW1/blob/master/data/%E7%B5%B1%E7%A5%9E%2B%E5%9C%8B%E5%8B%95(5)/hybrid_image_scales.jpg />|
 
-### Results
-
-<table border=1>
-<tr>
-<td>
-<img src="placeholder.jpg" width="24%"/>
-<img src="placeholder.jpg"  width="24%"/>
-<img src="placeholder.jpg" width="24%"/>
-<img src="placeholder.jpg" width="24%"/>
-</td>
-</tr>
-
-<tr>
-<td>
-<img src="placeholder.jpg" width="24%"/>
-<img src="placeholder.jpg"  width="24%"/>
-<img src="placeholder.jpg" width="24%"/>
-<img src="placeholder.jpg" width="24%"/>
-</td>
-</tr>
-
-</table>
