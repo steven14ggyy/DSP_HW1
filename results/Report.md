@@ -8,9 +8,9 @@ While implementing image filtering, we have to know how filtering works ─it's 
 After finishing the above image filtering function, what we do next is to produce hybrid images by combining two filtered images: one passes through a low-pass filter(Gaussian filter) and the other one passes through a high-pass filter. For those who stand far away from the hybrid image, they will see the low-pass filtered one, but for those who stand close to it, they will see the high-passed filtered one. This phenomenon is related to human's visual perception. People identify a contour of an object at a distance while see the details when they look at it closely. So by blending the high frequency portion of one image and the low frequency protion of another, we can makes hybrid image look different at different distances. 
 
 ## Implementation  
-1. Image Filtering (my_imfilter.m)  
+1. Image Filtering(my_imfilter.m)  
 	We write a matlab function that works same as the build-in function "imfilter()" (or other similar functions in Matlab), and the followings describe how I implement it.
-	first, read the information about the source image (i.e. RGB values, height, width) and the filter (i.e. filter_h, filter_w, value), and create appropriate arrays to store these RGB values with zero padding. The minimun number of zeros we pad around the source image are __2*(width-1)__ at right and left sides of the image, and __2*(height-1)__ at top and bottom of it:
+	First, read the information about the source image (i.e. RGB values, height, width) and the filter (i.e. filter_h, filter_w, value), and create appropriate arrays to store these RGB values with zero padding. The minimun number of zeros we pad around the source image are __2*(width-1)__ at right and left sides of the image, and __2*(height-1)__ at top and bottom of it:
 	<img src=https://github.com/steven14ggyy/DSP_Lab_HW1/blob/master/results/zeropadding_explanation.jpg width="70%"/>  
 	```Matlab
 	% RGB channel
@@ -38,7 +38,7 @@ After finishing the above image filtering function, what we do next is to produc
 	G_filter_result = zeros(filter_h -1 + height,filter_w - 1 + width);
 	B_filter_result = zeros(filter_h -1 + height,filter_w - 1 + width); 
 	```  
-	Now, we are ready to calculate convolution. I use double-nested for loop to conduct Matrix multiplications. As for mulplitication, because we are doing "convolution," we have to first flip the filter matrix horizontally and vertically (Same as what we've done in HW0), then do matrix multiplications.
+	Now, we are ready to calculate convolution. I use double-nested for loop to conduct element-by-element multiplication and sum up the elements of the result matrix . As for mulplitication, because we are doing "convolution," we have to first flip the filter matrix horizontally and vertically (Same as what we've done in HW0), then do the multiplication and sum-up.
 	```Matlab
 	%Flip the filter
 	filter_flip = fliplr(flipud(filter));
@@ -58,14 +58,39 @@ After finishing the above image filtering function, what we do next is to produc
 	 %truncation to get same resolution as input
 	 delete_x = floor(filter_w/2);
 	 delete_y = floor(filter_h/2);
+	 
+	output = zeros(height:width:3);
+	output(:,:,1) = R_filter_result(delete_y+1:delete_y+height,delete_x+1:delete_x+width);
+	output(:,:,2) = G_filter_result(delete_y+1:delete_y+height,delete_x+1:delete_x+width);
+	output(:,:,3) = B_filter_result(delete_y+1:delete_y+height,delete_x+1:delete_x+width);
 
-
-	  output = zeros(height:width:3);
-	  output(:,:,1) = R_filter_result(delete_y+1:delete_y+height,delete_x+1:delete_x+width);
-	  output(:,:,2) = G_filter_result(delete_y+1:delete_y+height,delete_x+1:delete_x+width);
-	  output(:,:,3) = B_filter_result(delete_y+1:delete_y+height,delete_x+1:delete_x+width);
-
-	```
+	```  
+	In testing matlab file "proj_test_filtering.m," it proceeds a cat image by using different filters to check the functionality of my_imfilter(), and followings are results:  
+	
+	
+	
+	
+	Identify filter | Small blur with a box filter | Large blur|Sobel Operator | High pass filter (Laplacian) | High pass "filter" alternative |
+	:-----:|:-----:|:-----:|:-----:|:-----:|:-----:|:-----:|
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<img src=https://github.com/steven14ggyy/DSP_Lab_HW1/blob/master/code/Part1%20result/identity_image.jpg>  |<img src=https://github.com/steven14ggyy/DSP_Lab_HW1/blob/master/code/Part1%20result/blur_image.jpg>|:-----:|:-----:|:-----:|:-----:|:-----:|
+	
 2. Hybrid images: 
 
 ```
