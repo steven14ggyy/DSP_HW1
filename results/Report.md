@@ -104,7 +104,7 @@ After finishing the above image filtering function, what we do next is to produc
 	
 	|Bicycle (LPF)|Motorcycle (HPF)|Hybrid image|
 	|--------------|--------------|-------------|
-	|<img src=https://github.com/steven14ggyy/DSP_Lab_HW1/blob/master/data/bicycle%2Bmotorcycle(10)/low_frequencies.jpg="70%"/>|<img src=https://github.com/steven14ggyy/DSP_Lab_HW1/blob/master/data/bicycle%2Bmotorcycle(10)/high_frequencies.jpg  width="70%"/>|<img src=https://github.com/steven14ggyy/DSP_Lab_HW1/blob/master/data/bicycle%2Bmotorcycle(10)/hybrid_image_scales.jpg width="70%"/>|
+	|<img src=https://github.com/steven14ggyy/DSP_Lab_HW1/blob/master/data/bicycle%2Bmotorcycle(10)/low_frequencies.jpg  width="70%"/>|<img src=https://github.com/steven14ggyy/DSP_Lab_HW1/blob/master/data/bicycle%2Bmotorcycle(10)/high_frequencies.jpg  width="70%"/>|<img src=https://github.com/steven14ggyy/DSP_Lab_HW1/blob/master/data/bicycle%2Bmotorcycle(10)/hybrid_image_scales.jpg width="70%"/>|
 ## Installation
 * Other required packages.
 * How to compile from source?
