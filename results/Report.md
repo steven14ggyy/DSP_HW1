@@ -67,30 +67,9 @@ After finishing the above image filtering function, what we do next is to produc
 	```  
 	In testing matlab file "proj_test_filtering.m," it proceeds a cat image by using different filters to check the functionality of my_imfilter(), and followings are results:  
 	
-	
-	
-	
 	Identify filter | Small blur with a box filter | Large blur|Sobel Operator | High pass filter (Laplacian) | High pass "filter" alternative |
 	:-----:|:-----:|:-----:|:-----:|:-----:|:-----:|:-----:|
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	<img src=https://github.com/steven14ggyy/DSP_Lab_HW1/blob/master/code/Part1%20result/identity_image.jpg>  |<img src=https://github.com/steven14ggyy/DSP_Lab_HW1/blob/master/code/Part1%20result/blur_image.jpg>|:-----:|:-----:|:-----:|:-----:|:-----:|
-	
+
 2. Hybrid images: 
 
 ```
