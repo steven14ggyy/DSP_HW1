@@ -66,7 +66,18 @@ After finishing the above image filtering function, what we do next is to produc
 
 	```  
 	In testing matlab file "proj_test_filtering.m," it proceeds a cat image by using different filters to check the functionality of my_imfilter(), and followings are results:
-<table border=1>
+	### Result:
+	
+	|Identify filter|Small blur with a box filter|Large blur|Sobel Operator|High pass filter (Laplacian)|High pass "filter" alternative|
+	|---------------|---------------|---------------|---------------|---------------|---------------|
+	<img src=https://github.com/steven14ggyy/DSP_Lab_HW1/blob/master/code/Part1%20result/identity_image.jpg width="24%"/>
+	|<img src=https://github.com/steven14ggyy/DSP_Lab_HW1/blob/master/code/Part1%20result/blur_image.jpg  width="24%"/>|
+	|<img src=https://github.com/steven14ggyy/DSP_Lab_HW1/blob/master/code/Part1%20result/large_blur_image.jpg width="24%"/>|
+	|<img src=https://github.com/steven14ggyy/DSP_Lab_HW1/blob/master/code/Part1%20result/sobel_image.jpg width="24%"/>|
+	|<img src=https://github.com/steven14ggyy/DSP_Lab_HW1/blob/master/code/Part1%20result/laplacian_image.jpg width="24%"/>|
+	|<img src=https://github.com/steven14ggyy/DSP_Lab_HW1/blob/master/code/Part1%20result/high_pass_image.jpg width="24%"/>|
+	
+<table border=0>
 <tr>
 <td>
 <img src=https://github.com/steven14ggyy/DSP_Lab_HW1/blob/master/code/Part1%20result/identity_image.jpg width="24%"/>
