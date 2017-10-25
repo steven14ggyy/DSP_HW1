@@ -132,5 +132,7 @@ After finishing the above image filtering function, what we do next is to produc
 	
 	|國動|統神|國動 (LPF)|統神 (HPF)|Hybrid image|
 	|--------------|--------------|-------------|--------------|--------------|
-	|<img src=https://github.com/steven14ggyy/DSP_Lab_HW1/blob/master/data/%E7%B5%B1%E7%A5%9E2.jpg />|<img src=https://github.com/steven14ggyy/DSP_Lab_HW1/blob/master/data/%E7%B5%B1%E7%A5%9E2.jpg />|<img src=https://github.com/steven14ggyy/DSP_Lab_HW1/blob/master/data/%E7%B5%B1%E7%A5%9E%2B%E5%9C%8B%E5%8B%95(5)/low_frequencies.jpg />|<img src=https://github.com/steven14ggyy/DSP_Lab_HW1/blob/master/data/%E7%B5%B1%E7%A5%9E%2B%E5%9C%8B%E5%8B%95(5)/high_frequencies.jpg />|<img src=https://github.com/steven14ggyy/DSP_Lab_HW1/blob/master/data/%E7%B5%B1%E7%A5%9E%2B%E5%9C%8B%E5%8B%95(5)/hybrid_image_scales.jpg />|
+	|<img src=https://github.com/steven14ggyy/DSP_Lab_HW1/blob/master/data/%E5%9C%8B%E5%8B%952.jpg />|<img src=https://github.com/steven14ggyy/DSP_Lab_HW1/blob/master/data/%E7%B5%B1%E7%A5%9E2.jpg />|<img src=https://github.com/steven14ggyy/DSP_Lab_HW1/blob/master/data/%E7%B5%B1%E7%A5%9E%2B%E5%9C%8B%E5%8B%95(5)/low_frequencies.jpg />|<img src=https://github.com/steven14ggyy/DSP_Lab_HW1/blob/master/data/%E7%B5%B1%E7%A5%9E%2B%E5%9C%8B%E5%8B%95(5)/high_frequencies.jpg />|<img src=https://github.com/steven14ggyy/DSP_Lab_HW1/blob/master/data/%E7%B5%B1%E7%A5%9E%2B%E5%9C%8B%E5%8B%95(5)/hybrid_image_scales.jpg />|
+	
+	It is very hard to produce good hybrid images. Both source images must have simliar contours, so that when we blender them, the contours of both can be aligned.  It will look better if we use such similar images to produce hybrid images.
 
