@@ -4,7 +4,8 @@
 
 ## Overview
 The project is related to image filtering and hybrid images.   
-While implementing image filtering, we have to know how filtering works ─it's all about "convolution." So we will write my_imfilter(), a function which does the same thing as Matlab build-in function "imfilter" does.  
+While implementing image filtering, we have to know how filtering works ─it's all about "convolution." So we will write my_imfilter(), a function which does the same thing as Matlab build-in function "imfilter" does.
+
 After finishing the above image filtering function, what we do next is to produce hybrid images by combining two filtered images: one passes through a low-pass filter(Gaussian filter) and the other one passes through a high-pass filter. For those who stand far away from the hybrid image, they will see the low-pass filtered one, but for those who stand close to it, they will see the high-passed filtered one. This phenomenon is related to human's visual perception. People identify a contour of an object at a distance while see the details when they look at it closely. So by blending the high frequency portion of one image and the low frequency protion of another, we can makes hybrid image look different at different distances. 
 
 ## Implementation  
@@ -73,11 +74,37 @@ After finishing the above image filtering function, what we do next is to produc
 	|<img src=https://github.com/steven14ggyy/DSP_Lab_HW1/blob/master/code/Part1%20result/identity_image.jpg width="70%"/>|<img src=https://github.com/steven14ggyy/DSP_Lab_HW1/blob/master/code/Part1%20result/blur_image.jpg  width="70%"/>|<img src=https://github.com/steven14ggyy/DSP_Lab_HW1/blob/master/code/Part1%20result/large_blur_image.jpg width="70%"/>|<img src=https://github.com/steven14ggyy/DSP_Lab_HW1/blob/master/code/Part1%20result/sobel_image.jpg width="70%"/>|<img src=https://github.com/steven14ggyy/DSP_Lab_HW1/blob/master/code/Part1%20result/laplacian_image.jpg width="70%"/>|<img src=https://github.com/steven14ggyy/DSP_Lab_HW1/blob/master/code/Part1%20result/high_pass_image.jpg width="70%"/>|
 	
 2. Hybrid images: 
+	To produce Hybrid images, we need a low-pass filter and a high-pass filter. Here we choose Gausian filter as a LPF. Using identity filter minus Gausian filter, we get a HPF. To show a high-pass filtered image with right data range, we have to add 0.5 to the result so the image is visualized. Finally, we sum both results up and show the hybrid image on the screen. To see the changes apparently, we size the hybrid image by downsampling and put the original hybrid image and its copies with smaller sizes together to compare their differences.
+	```Matlab
+	%Create LPF
+	cutoff_frequency = 5; 
+	filter = fspecial('Gaussian', cutoff_frequency*4+1, cutoff_frequency);
+	%Create HPF
+	[filter_com_h, filter_com_w]= size(filter);
+	filter_com = zeros(filter_com_h, filter_com_w);
+	filter_com(ceil(filter_com_h/2),ceil(filter_com_w/2))=1;
+	filter_com = filter_com - filter;
+	%Convolution
+	low_frequencies= my_imfilter(image1,filter);
+	high_frequencies= my_imfilter(image2,filter_com);
+	hybrid_image= (low_frequencies + high_frequencies);
+	%% Visualize and save outputs
+	figure(1); imshow(low_frequencies);
+	figure(2); imshow(high_frequencies + 0.5);
+	vis = vis_hybrid_image(hybrid_image);
+	figure(3); imshow(vis);
+	imwrite(low_frequencies, 'low_frequencies.jpg', 'quality', 95);
+	imwrite(high_frequencies + 0.5, 'high_frequencies.jpg', 'quality', 95);
+	imwrite(hybrid_image, 'hybrid_image.jpg', 'quality', 95);
+	imwrite(vis, 'hybrid_image_scales.jpg', 'quality', 95);
+	```
+	Cut-off frequency: This is the frequency where a LPF has its gain equal to 0.5. We can adjust this value depending on different hybrid image productions. After several experiments, I found that __the smaller the cut-off frequency is, the clearer the low-pass filtered image is.__ On the other hand, if we __raise the cut-off frequency, we can see the high-pass filtered image more clearly.__ So it depends on what input image we want to process and what kind of hybrid images we want to show.
+	Followings are the results, including the images given by TA and two additional images I downloaded from the Internet.
+	### Result:
 	
-```
-Code highlights
-```
-
+	|Bicycle (LPF)|Motorcycle (HPF)|Hybrid image|
+	|--------------|--------------|-------------|
+	|<img src=https://github.com/steven14ggyy/DSP_Lab_HW1/blob/master/data/bicycle%2Bmotorcycle(10)/low_frequencies.jpg="70%"/>|<img src=https://github.com/steven14ggyy/DSP_Lab_HW1/blob/master/data/bicycle%2Bmotorcycle(10)/high_frequencies.jpg  width="70%"/>|<img src=https://github.com/steven14ggyy/DSP_Lab_HW1/blob/master/data/bicycle%2Bmotorcycle(10)/hybrid_image_scales.jpg width="70%"/>|
 ## Installation
 * Other required packages.
 * How to compile from source?
