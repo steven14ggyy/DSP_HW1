@@ -54,7 +54,7 @@ After finishing the above image filtering function, what we do next is to produc
 	 end
 	```
 	Finally, we have to truncate the result to give out the filtered result with the same resolution as the source image. We throw out some pixels around the result image.  
-	<P Align=center><img src=https://github.com/steven14ggyy/DSP_Lab_HW1/blob/master/results/truncation_explanation.jpg width="40%"/>
+	<img src=https://github.com/steven14ggyy/DSP_Lab_HW1/blob/master/results/truncation_explanation.jpg width="40%"/>
 	```Matlab
 	%truncation to get same resolution as input
 	delete_x = floor(filter_w/2);
