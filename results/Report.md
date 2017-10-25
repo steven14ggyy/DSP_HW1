@@ -71,7 +71,7 @@ After finishing the above image filtering function, what we do next is to produc
 	
 	|Identify filter|Small blur with a box filter|Large blur|Sobel Operator|High pass filter (Laplacian)|High pass "filter" alternative|
 	|---------------|---------------|---------------|---------------|---------------|---------------|
-	|<img src=https://github.com/steven14ggyy/DSP_Lab_HW1/blob/master/code/Part1%20result/identity_image.jpg width="70%"/>|<img src=https://github.com/steven14ggyy/DSP_Lab_HW1/blob/master/code/Part1%20result/blur_image.jpg  width="70%"/>|<img src=https://github.com/steven14ggyy/DSP_Lab_HW1/blob/master/code/Part1%20result/large_blur_image.jpg width="70%"/>|<img src=https://github.com/steven14ggyy/DSP_Lab_HW1/blob/master/code/Part1%20result/sobel_image.jpg width="70%"/>|<img src=https://github.com/steven14ggyy/DSP_Lab_HW1/blob/master/code/Part1%20result/laplacian_image.jpg width="70%"/>|<img src=https://github.com/steven14ggyy/DSP_Lab_HW1/blob/master/code/Part1%20result/high_pass_image.jpg width="70%"/>|
+	|<img src=https://github.com/steven14ggyy/DSP_Lab_HW1/blob/master/code/Part1%20result/identity_image.jpg />|<img src=https://github.com/steven14ggyy/DSP_Lab_HW1/blob/master/code/Part1%20result/blur_image.jpg />|<img src=https://github.com/steven14ggyy/DSP_Lab_HW1/blob/master/code/Part1%20result/large_blur_image.jpg />|<img src=https://github.com/steven14ggyy/DSP_Lab_HW1/blob/master/code/Part1%20result/sobel_image.jpg/>|<img src=https://github.com/steven14ggyy/DSP_Lab_HW1/blob/master/code/Part1%20result/laplacian_image.jpg />|<img src=https://github.com/steven14ggyy/DSP_Lab_HW1/blob/master/code/Part1%20result/high_pass_image.jpg />|
 	
 2. Hybrid images: 
 	To produce Hybrid images, we need a low-pass filter and a high-pass filter. Here we choose Gausian filter as a LPF. Using identity filter minus Gausian filter, we get a HPF. To show a high-pass filtered image with right data range, we have to add 0.5 to the result so the image is visualized. Finally, we sum both results up and show the hybrid image on the screen. To see the changes apparently, we size the hybrid image by downsampling and put the original hybrid image and its copies with smaller sizes together to compare their differences.
@@ -105,15 +105,26 @@ After finishing the above image filtering function, what we do next is to produc
 	|Bicycle (LPF)|Motorcycle (HPF)|Hybrid image|
 	|--------------|--------------|-------------|
 	|<img src=https://github.com/steven14ggyy/DSP_Lab_HW1/blob/master/data/bicycle%2Bmotorcycle(10)/low_frequencies.jpg  />|<img src=https://github.com/steven14ggyy/DSP_Lab_HW1/blob/master/data/bicycle%2Bmotorcycle(10)/high_frequencies.jpg  />|<img src=https://github.com/steven14ggyy/DSP_Lab_HW1/blob/master/data/bicycle%2Bmotorcycle(10)/hybrid_image_scales.jpg />|  
+	
 	|Bird (LPF)|Plane (HPF)|Hybrid image|
 	|--------------|--------------|-------------|
 	|<img src=https://github.com/steven14ggyy/DSP_Lab_HW1/blob/master/data/bird%2Bplane(4)/low_frequencies.jpg />|<img src=https://github.com/steven14ggyy/DSP_Lab_HW1/blob/master/data/bird%2Bplane(4)/high_frequencies.jpg />|<img src=https://github.com/steven14ggyy/DSP_Lab_HW1/blob/master/data/bird%2Bplane(4)/hybrid_image_scales.jpg/>|
+	
 	|Dog (LPF)|Cat (HPF)|Hybrid image|
 	|--------------|--------------|-------------|
 	|<img src=https://github.com/steven14ggyy/DSP_Lab_HW1/blob/master/data/cat%2Bdog(7)/low_frequencies.jpg />|<img src=https://github.com/steven14ggyy/DSP_Lab_HW1/blob/master/data/cat%2Bdog(7)/high_frequencies.jpg />|<img src=https://github.com/steven14ggyy/DSP_Lab_HW1/blob/master/data/cat%2Bdog(7)/hybrid_image_scales.jpg />|
+	
 	|Fish (LPF)|Submarine (HPF)|Hybrid image|
 	|--------------|--------------|-------------|
 	|<img src=https://github.com/steven14ggyy/DSP_Lab_HW1/tree/master/data/fish%low_frequencies(12) />|<img src=https://github.com/steven14ggyy/DSP_Lab_HW1/tree/master/data/fish%high_frequencies(12) />|<img src=https://github.com/steven14ggyy/DSP_Lab_HW1/tree/master/data/fish%hybrid_image_scales(12) />|
+	
+	|Einstein (LPF)|Marilyn (HPF)|Hybrid image|
+	|--------------|--------------|-------------|
+	|<img src=https://github.com/steven14ggyy/DSP_Lab_HW1/blob/master/data/einstein%2Bmarilyn(6)/low_frequencies.jpg />|<img src=https://github.com/steven14ggyy/DSP_Lab_HW1/blob/master/data/einstein%2Bmarilyn(6)/high_frequencies.jpg />|<img src=https://github.com/steven14ggyy/DSP_Lab_HW1/blob/master/data/einstein%2Bmarilyn(6)/hybrid_image_scales.jpg />|
+	
+	|Darius|Garen|Darius (LPF)|Garen (HPF)|Hybrid image|
+	|--------------|--------------|-------------|--------------|--------------|
+	|<img src=https://github.com/steven14ggyy/DSP_Lab_HW1/blob/master/data/Darius.png />|<img src=https://github.com/steven14ggyy/DSP_Lab_HW1/blob/master/data/Garen.png />|<img src=https://github.com/steven14ggyy/DSP_Lab_HW1/blob/master/data/Garen%2BDarius(6.5)/low_frequencies.jpg />|<img src=https://github.com/steven14ggyy/DSP_Lab_HW1/blob/master/data/Garen%2BDarius(6.5)/high_frequencies.jpg />|<img src=https://github.com/steven14ggyy/DSP_Lab_HW1/blob/master/data/Garen%2BDarius(6.5)/hybrid_image_scales.jpg />|
 ## Installation
 * Other required packages.
 * How to compile from source?
