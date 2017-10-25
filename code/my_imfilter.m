@@ -28,6 +28,46 @@ function output = my_imfilter(image, filter)
 %%%%%%%%%%%%%%%%
 % Your code here
 %%%%%%%%%%%%%%%%
+% RGB channel
+R(:,:) = double(image(:,:,1));
+G(:,:) = double(image(:,:,2));
+B(:,:) = double(image(:,:,3));
+[height, width, channel] = size(image);
+%filter size
+[filter_h, filter_w] = size(filter);
+
+R_filter_space = zeros(2*filter_h -2 + height,2*filter_w - 2 + width);
+G_filter_space = zeros(2*filter_h -2 + height,2*filter_w - 2 + width);
+B_filter_space = zeros(2*filter_h -2 + height,2*filter_w - 2 + width);
+R_filter_space (filter_h:filter_h + height-1,filter_w:filter_w + width-1) = R;
+G_filter_space (filter_h:filter_h + height-1,filter_w:filter_w + width-1) = G;
+B_filter_space (filter_h:filter_h + height-1,filter_w:filter_w + width-1) = B;
+
+%Create space to store the results
+R_filter_result = zeros(filter_h -1 + height,filter_w - 1 + width);
+G_filter_result = zeros(filter_h -1 + height,filter_w - 1 + width);
+B_filter_result = zeros(filter_h -1 + height,filter_w - 1 + width); 
+ 
+%Flip the filter
+filter_flip = fliplr(flipud(filter));
+
+%Calculating
+ for x = 1: filter_w + width - 1
+     for y = 1: filter_h + height - 1;
+         R_filter_result(y,x) = sum(sum(filter_flip .* R_filter_space(y:y+filter_h-1,x:x+filter_w-1))); 
+         G_filter_result(y,x) = sum(sum(filter_flip .* G_filter_space(y:y+filter_h-1,x:x+filter_w-1))); 
+         B_filter_result(y,x) = sum(sum(filter_flip .* B_filter_space(y:y+filter_h-1,x:x+filter_w-1))); 
+     end
+ end
+ %truncation to get same resolution as input
+ delete_x = floor(filter_w/2);
+ delete_y = floor(filter_h/2);
+ 
+
+  output = zeros(height:width:3);
+  output(:,:,1) = R_filter_result(delete_y+1:delete_y+height,delete_x+1:delete_x+width);
+  output(:,:,2) = G_filter_result(delete_y+1:delete_y+height,delete_x+1:delete_x+width);
+  output(:,:,3) = B_filter_result(delete_y+1:delete_y+height,delete_x+1:delete_x+width);
 
 %%%%%%%%%%%%%%%%
 % Your code end

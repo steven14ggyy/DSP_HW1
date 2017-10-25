@@ -10,8 +10,8 @@ close all; % closes all figures
 
 %% Setup
 % read images and convert to floating point format
-image1 = im2single(imread('../data/dog.bmp'));
-image2 = im2single(imread('../data/cat.bmp'));
+image1 = im2single(imread('../data/cat.bmp'));
+image2 = im2single(imread('../data/dog.bmp'));
 
 % Several additional test cases are provided for you, but feel free to make
 % your own (you'll need to align the images in a photo editor such as
@@ -20,13 +20,18 @@ image2 = im2single(imread('../data/cat.bmp'));
 % you asign as image2 (which will provide the high frequencies)
 
 %% Filtering and Hybrid Image construction
-cutoff_frequency = 7; %This is the standard deviation, in pixels, of the 
+cutoff_frequency = 4; %This is the standard deviation, in pixels, of the 
 % Gaussian blur that will remove the high frequencies from one image and 
 % remove the low frequencies from another image (by subtracting a blurred
 % version from the original version). You will want to tune this for every
 % image pair to get the best results.
 filter = fspecial('Gaussian', cutoff_frequency*4+1, cutoff_frequency);
 
+
+[filter_com_h, filter_com_w]= size(filter);
+filter_com = zeros(filter_com_h, filter_com_w);
+filter_com(ceil(filter_com_h/2),ceil(filter_com_w/2))=1;
+filter_com = filter_com - filter;
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % YOUR CODE BELOW. Use my_imfilter create 'low_frequencies' and
 % 'high_frequencies' and then combine them to create 'hybrid_image'
@@ -37,7 +42,7 @@ filter = fspecial('Gaussian', cutoff_frequency*4+1, cutoff_frequency);
 % blur that works best will vary with different image pairs
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-%low_frequencies=
+low_frequencies= my_imfilter(image1,filter);
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Remove the low frequencies from image2. The easiest way to do this is to
@@ -45,13 +50,13 @@ filter = fspecial('Gaussian', cutoff_frequency*4+1, cutoff_frequency);
 % This will give you an image centered at zero with negative values.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-%high_frequencies=
+high_frequencies= my_imfilter(image2,filter_com);
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Combine the high frequencies and low frequencies
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-%hybrid_image=
+hybrid_image= (low_frequencies + high_frequencies);
 
 %% Visualize and save outputs
 figure(1); imshow(low_frequencies);
